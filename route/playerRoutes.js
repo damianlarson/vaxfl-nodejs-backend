@@ -1,7 +1,7 @@
 const db = require('../db/index');
 
 const getAllPlayers = async (req, res) => {
-  const { rows } = await db.query('SELECT id, full_name, player_position FROM players');
+  const { rows } = await db.query('SELECT full_name, player_position FROM players');
   res.send(rows);
 };
 
@@ -13,7 +13,6 @@ const getADPs = async (req, res) => {
     res.send(rows);
   } catch (err) {
     res.status(400);
-    console.error(err);
     res.send({ error: 'Invalid format' });
   }
 };
