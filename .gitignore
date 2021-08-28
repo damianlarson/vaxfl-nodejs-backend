@@ -123,3 +123,6 @@ dist
 .env
 
 *.psql
+
+json/**
+route/generateQueryRoutes.js
